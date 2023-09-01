@@ -9,8 +9,14 @@
 ## Documentação
 - [Figma](https://www.figma.com/file/oJi3whBv4luKeaW5T5pA3v/EcoJardimPro?type=design&mode=design&t=4fnKDxx6sCSYJ4Db-0)
 - [Documentação Geral](https://docs.google.com/document/d/1JMjm1muBqhapi9Qt6KIIyHpfkzLn1fpmhYAdd8UV3Uw/edit?usp=sharing)
-- **Diagrama de classes - Versão 1**
-  ![Class Diagram EcoJardimPro](https://github.com/LeoPedroza98/EcoJardimPro/assets/49344443/7c3fe292-fe3a-4fc5-abfe-e78918b8c628)
+- **Diagrama de classes**
+  - **Dominio essencial**
+  ![Class Diagram- DOMINIO PRINCIPAL](https://github.com/LeoPedroza98/EcoJardimPro/assets/49344443/e181a26e-aa02-47f3-9937-eaa7512e3225)
+  - **Dominio completo**
+    ![ClassDiagram-DiagramDeClassesCompleto](https://github.com/LeoPedroza98/EcoJardimPro/assets/49344443/f5389da9-8fda-4629-b8ed-eba1674869d7)
+
+
+
 ## Autores
 
 - [Leonardo]([https://www.github.com/octokatherine](https://github.com/LeoPedroza98))
