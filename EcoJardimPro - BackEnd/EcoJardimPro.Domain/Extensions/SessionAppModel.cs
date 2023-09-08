@@ -9,14 +9,13 @@
         public string Login { get; set; }
         public byte[] UserFoto { get; set; }
         public bool TemaEscuro { get; set; }
-        public SessionAppModel(long userId, string userNome, string role, string login, byte[] userFoto, bool temaEscuro)
+        public SessionAppModel(long userId,string login, string userNome, string role )
         {
             UserId = userId;
             UserNome = userNome;
             Role = role;
             Login = login;
-            UserFoto = userFoto;
-            TemaEscuro = temaEscuro;
+            TemaEscuro = false;
         }
     }
 }

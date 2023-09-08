@@ -2,7 +2,7 @@
 
 namespace EcoJardimPro.Data.Common
 {
-    public interface EcoJardimProvider
+    public interface IEcoJardimProvider
     {
         SessionAppModel SessionApp { get; }
     }
