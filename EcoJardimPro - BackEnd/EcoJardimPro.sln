@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Util", "Util", "{4BCAC6D9-9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoJardimPro.Util", "EcoJardimPro.Util\EcoJardimPro.Util.csproj", "{D21ED869-FFC8-4725-A2D6-E281B74E374A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5F09E2F0-986F-4A9C-9DDB-5D3844D17373}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoJardimPro.Tests", "EcoJardimPro.Tests\EcoJardimPro.Tests.csproj", "{0F06824D-9E3B-4F38-A46E-718133F2E267}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{D21ED869-FFC8-4725-A2D6-E281B74E374A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D21ED869-FFC8-4725-A2D6-E281B74E374A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D21ED869-FFC8-4725-A2D6-E281B74E374A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F06824D-9E3B-4F38-A46E-718133F2E267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F06824D-9E3B-4F38-A46E-718133F2E267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F06824D-9E3B-4F38-A46E-718133F2E267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F06824D-9E3B-4F38-A46E-718133F2E267}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{3A6C8CF8-287B-4DC4-AAD7-2E9E06BE1D97} = {C7D51BCB-881C-4E45-936C-4822BFB7295D}
 		{347E28F6-7FDA-4126-AA0F-BB5AA2B13346} = {3659DFC9-A97C-4154-A8DC-F75D54B18291}
 		{D21ED869-FFC8-4725-A2D6-E281B74E374A} = {4BCAC6D9-9989-4764-BB01-0813A3F4ECB2}
+		{0F06824D-9E3B-4F38-A46E-718133F2E267} = {5F09E2F0-986F-4A9C-9DDB-5D3844D17373}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B89DC61-B490-40B6-A93D-26EA15881E8F}
