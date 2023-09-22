@@ -1,7 +1,7 @@
 ﻿using EcoJardimPro.Domain.Common;
 using EcoJardimPro.Domain.Extensions;
 
-namespace EcoJardimPro.Data.Interfaces
+namespace EcoJardimPro.Data.Common
 {
     public interface IQueryRepository<TEntity> where TEntity : class, IEntity
     {

@@ -1,10 +1,9 @@
 ﻿using EcoJardimPro.Data.Context;
-using EcoJardimPro.Data.Interfaces;
 using EcoJardimPro.Domain.Common;
 using EcoJardimPro.Util.Exceptions;
 using EcoJardimPro.Util.Helpers;
 
-namespace EcoJardimPro.Data.Repositories
+namespace EcoJardimPro.Data.Common
 {
     public class CrudRepository<TEntity> : QueryRepository<TEntity>, ICrudRepository<TEntity> where TEntity : class, IEntity
     {

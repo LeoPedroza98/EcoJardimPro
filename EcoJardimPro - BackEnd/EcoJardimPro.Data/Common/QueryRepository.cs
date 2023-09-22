@@ -1,10 +1,9 @@
 ﻿using EcoJardimPro.Data.Context;
-using EcoJardimPro.Data.Interfaces;
 using EcoJardimPro.Domain.Common;
 using EcoJardimPro.Domain.Extensions;
 using Microsoft.EntityFrameworkCore;
 
-namespace EcoJardimPro.Data.Repositories
+namespace EcoJardimPro.Data.Common
 {
     public class QueryRepository<TEntity> : IQueryRepository<TEntity> where TEntity : class, IEntity
     {

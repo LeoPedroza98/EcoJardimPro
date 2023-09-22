@@ -5,23 +5,27 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C7D51BCB-881C-4E45-936C-4822BFB7295D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoJardimPro.Domain", "EcoJardimPro.Domain\EcoJardimPro.Domain.csproj", "{3A6C8CF8-287B-4DC4-AAD7-2E9E06BE1D97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoJardimPro.Domain", "EcoJardimPro.Domain\EcoJardimPro.Domain.csproj", "{3A6C8CF8-287B-4DC4-AAD7-2E9E06BE1D97}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{3659DFC9-A97C-4154-A8DC-F75D54B18291}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoJardimPro.Data", "EcoJardimPro.Data\EcoJardimPro.Data.csproj", "{347E28F6-7FDA-4126-AA0F-BB5AA2B13346}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoJardimPro.Data", "EcoJardimPro.Data\EcoJardimPro.Data.csproj", "{347E28F6-7FDA-4126-AA0F-BB5AA2B13346}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Util", "Util", "{4BCAC6D9-9989-4764-BB01-0813A3F4ECB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoJardimPro.Util", "EcoJardimPro.Util\EcoJardimPro.Util.csproj", "{D21ED869-FFC8-4725-A2D6-E281B74E374A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoJardimPro.Util", "EcoJardimPro.Util\EcoJardimPro.Util.csproj", "{D21ED869-FFC8-4725-A2D6-E281B74E374A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5F09E2F0-986F-4A9C-9DDB-5D3844D17373}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoJardimPro.Tests", "EcoJardimPro.Tests\EcoJardimPro.Tests.csproj", "{0F06824D-9E3B-4F38-A46E-718133F2E267}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoJardimPro.Tests", "EcoJardimPro.Tests\EcoJardimPro.Tests.csproj", "{0F06824D-9E3B-4F38-A46E-718133F2E267}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{D0AA6FC5-CB47-487F-B409-648605B07A1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoJardimPro.API", "EcoJardimPro.API\EcoJardimPro.API.csproj", "{7BDB1A5C-F5D7-4B05-9835-0F3F815D8EAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoJardimPro.API", "EcoJardimPro.API\EcoJardimPro.API.csproj", "{7BDB1A5C-F5D7-4B05-9835-0F3F815D8EAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{28609274-60D5-44FD-B7FF-56E8EE372BFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoJardimPro.Services", "EcoJardimPro.Services\EcoJardimPro.Services.csproj", "{CA7DAE7A-C77F-4A6A-A286-371530C588E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{7BDB1A5C-F5D7-4B05-9835-0F3F815D8EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BDB1A5C-F5D7-4B05-9835-0F3F815D8EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BDB1A5C-F5D7-4B05-9835-0F3F815D8EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA7DAE7A-C77F-4A6A-A286-371530C588E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA7DAE7A-C77F-4A6A-A286-371530C588E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA7DAE7A-C77F-4A6A-A286-371530C588E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA7DAE7A-C77F-4A6A-A286-371530C588E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,7 @@ Global
 		{D21ED869-FFC8-4725-A2D6-E281B74E374A} = {4BCAC6D9-9989-4764-BB01-0813A3F4ECB2}
 		{0F06824D-9E3B-4F38-A46E-718133F2E267} = {5F09E2F0-986F-4A9C-9DDB-5D3844D17373}
 		{7BDB1A5C-F5D7-4B05-9835-0F3F815D8EAA} = {D0AA6FC5-CB47-487F-B409-648605B07A1F}
+		{CA7DAE7A-C77F-4A6A-A286-371530C588E9} = {28609274-60D5-44FD-B7FF-56E8EE372BFC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B89DC61-B490-40B6-A93D-26EA15881E8F}
