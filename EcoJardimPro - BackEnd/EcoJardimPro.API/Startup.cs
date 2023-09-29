@@ -10,6 +10,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using EcoJardimPro.API.Extensions;
 using EcoJardimPro.DOMAIN.Entity.All;
+using EcoJardimPro.DATA.Context;
 
 namespace EcoJardimPro.API
 {
@@ -38,7 +39,7 @@ namespace EcoJardimPro.API
             services.AddInjections();
             services.AddJwt(Configuration);
 
-            services.AddDbContext<DATA.Context.EcoJardimProContext>(options =>
+            services.AddDbContext<EcoJardimProContext>(options =>
             {
                 options.UseNpgsql(Configuration.GetConnectionString("Principal"));
                 options.UseLoggerFactory(_loggerFactory);

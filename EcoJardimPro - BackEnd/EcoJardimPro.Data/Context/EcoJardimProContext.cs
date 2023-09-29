@@ -9,16 +9,16 @@ namespace EcoJardimPro.DATA.Context
     public class EcoJardimProContext : DbContext
     {
         public SessionAppModel SessionApp { get; }
+        public EcoJardimProContext(DbContextOptions<EcoJardimProContext> options): base(options)
+        {
+
+        }
         
         public EcoJardimProContext( DbContextOptions<EcoJardimProContext> options, IEcoJardimProProvider filmeProvider) : base(options)
         {
             SessionApp = filmeProvider.SessionApp;
         }
 
-        public EcoJardimProContext(DbContextOptions<EcoJardimProContext> options): base(options)
-        {
-
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
