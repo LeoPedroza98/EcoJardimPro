@@ -1,4 +1,4 @@
-﻿namespace EcoJardimPro.Util.Helpers
+﻿namespace EcoJardimPro.UTIL.Helpers
 {
     public class MensagemHelper
     {

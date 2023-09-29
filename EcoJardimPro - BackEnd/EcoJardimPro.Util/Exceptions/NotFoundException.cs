@@ -1,4 +1,6 @@
-﻿namespace EcoJardimPro.Util.Exceptions
+﻿using System;
+
+namespace EcoJardimPro.UTIL.Exceptions
 {
     public class NotFoundException : Exception
     {

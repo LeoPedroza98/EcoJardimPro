@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Converters;
 
-namespace EcoJardimPro.Util.Converters
+namespace EcoJardimPro.UTIL.Converters
 {
     public class OnlyDateConverter : IsoDateTimeConverter
     {
