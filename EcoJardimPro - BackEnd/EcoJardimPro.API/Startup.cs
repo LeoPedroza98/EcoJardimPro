@@ -39,9 +39,12 @@ namespace EcoJardimPro.API
             services.AddInjections();
             services.AddJwt(Configuration);
 
+            services.AddEndpointsApiExplorer();
+            services.AddSwaggerGen();
+
             services.AddDbContext<EcoJardimProContext>(options =>
             {
-                options.UseNpgsql(Configuration.GetConnectionString("Principal"));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
                 options.UseLoggerFactory(_loggerFactory);
             });
             services.AddControllers(mvc => mvc.EnableEndpointRouting = false)
@@ -76,11 +79,11 @@ namespace EcoJardimPro.API
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseMvc(routeBuilder =>
-            {
-                routeBuilder.Select().Filter().OrderBy().Count().MaxTop(null);
-                routeBuilder.EnableDependencyInjection();
-            });
+            //app.UseMvc(routeBuilder =>
+            //{
+            //    routeBuilder.EnableDependencyInjection();
+            //    routeBuilder.Select().Filter().OrderBy().Count().MaxTop(null);
+            //});
         }
 
         private void UpdateDatabase(IApplicationBuilder app)
