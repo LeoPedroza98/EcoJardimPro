@@ -21,6 +21,7 @@ namespace EcoJardimProject.Data.Context
 
         #region DbSets
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
         #endregion
     }
 }
