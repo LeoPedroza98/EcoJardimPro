@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{8A0EEA23-AD91-4F03-BC1A-F6E8C015A9F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{23C1EF80-2096-417A-A523-3AC83361D06D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoJardimProject.Domain", "EcoJardimProject.Domain\EcoJardimProject.Domain.csproj", "{7F0B407C-63E2-4FE3-AEAA-9047DE7D8A5E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoJardimProject.Data", "EcoJardimProject.Data\EcoJardimProject.Data.csproj", "{43C58A6E-0FEB-4C35-B5DE-B8B5E65DEFD6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoJardimProject.Utils", "EcoJardimProject.Utils\EcoJardimProject.Utils.csproj", "{D741401E-A4DD-478D-B8A2-F43923D82D3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoJardimProject.API", "EcoJardimProject.API\EcoJardimProject.API.csproj", "{8340671B-B8C5-4F64-B9EF-21F306693F75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F0B407C-63E2-4FE3-AEAA-9047DE7D8A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0B407C-63E2-4FE3-AEAA-9047DE7D8A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0B407C-63E2-4FE3-AEAA-9047DE7D8A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0B407C-63E2-4FE3-AEAA-9047DE7D8A5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43C58A6E-0FEB-4C35-B5DE-B8B5E65DEFD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C58A6E-0FEB-4C35-B5DE-B8B5E65DEFD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43C58A6E-0FEB-4C35-B5DE-B8B5E65DEFD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43C58A6E-0FEB-4C35-B5DE-B8B5E65DEFD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D741401E-A4DD-478D-B8A2-F43923D82D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D741401E-A4DD-478D-B8A2-F43923D82D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D741401E-A4DD-478D-B8A2-F43923D82D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D741401E-A4DD-478D-B8A2-F43923D82D3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8340671B-B8C5-4F64-B9EF-21F306693F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8340671B-B8C5-4F64-B9EF-21F306693F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8340671B-B8C5-4F64-B9EF-21F306693F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8340671B-B8C5-4F64-B9EF-21F306693F75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7F0B407C-63E2-4FE3-AEAA-9047DE7D8A5E} = {8A0EEA23-AD91-4F03-BC1A-F6E8C015A9F2}
+		{43C58A6E-0FEB-4C35-B5DE-B8B5E65DEFD6} = {8A0EEA23-AD91-4F03-BC1A-F6E8C015A9F2}
+		{D741401E-A4DD-478D-B8A2-F43923D82D3D} = {8A0EEA23-AD91-4F03-BC1A-F6E8C015A9F2}
+		{8340671B-B8C5-4F64-B9EF-21F306693F75} = {23C1EF80-2096-417A-A523-3AC83361D06D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {223218D5-95B7-43B6-A53F-E8918C9B9C42}
+	EndGlobalSection
+EndGlobal
