@@ -24,6 +24,18 @@ namespace EcoJardimProject.API.Extensions
 
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteService, ClienteService>();
+
+            services.AddScoped<IProjetoRepository, ProjetoRepository>();
+            services.AddScoped<IProjetoService, ProjetoService>();
+            
+            services.AddScoped<IOrcamentoRepository, OrcamentoRepository>();
+            services.AddScoped<IOrcamentoService, OrcamentoService>();
+
+            services.AddScoped<IServicoRepository, ServicoRepository>();
+            services.AddScoped<IServicoService, ServicoService>();
+            
+            services.AddScoped<IStatusRepository, StatusRepository>();
+            services.AddScoped<IStatusService, StatusService>();
         }
 
     }

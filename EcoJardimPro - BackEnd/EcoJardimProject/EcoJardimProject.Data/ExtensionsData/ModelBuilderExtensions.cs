@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EcoJardimProject.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace EcoJardimProject.Data.ExtensionsData
 {
@@ -7,6 +8,7 @@ namespace EcoJardimProject.Data.ExtensionsData
         public static void Seed(this ModelBuilder modelBuilder)
         {
             #region Geral
+            modelBuilder.Entity<Status>().HasData(Status.ObterDados());
             #endregion
         }
     }
