@@ -15,7 +15,7 @@ public class ServicoController : MasterCrudController<Servico>
 {
   private IServicoService _service;
 
-  public ServicoController(ILogger<MasterCrudController<Servico>> logger, IServicoService service, string includePatch = "") : base(logger, service, includePatch)
+  public ServicoController(ILogger<MasterCrudController<Servico>> logger, IServicoService service, string includePatch = "Status") : base(logger, service, includePatch)
   {
     _service = service;
   }
