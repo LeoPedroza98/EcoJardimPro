@@ -3,6 +3,7 @@ using EcoJardimProject.Domain.IdentityBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
+using EcoJardimProject.API.Repositories;
 using EcoJardimProject.API.Services;
 
 namespace EcoJardimProject.API.Extensions
@@ -19,6 +20,10 @@ namespace EcoJardimProject.API.Extensions
             services.AddScoped<DbContext, EcoJardimProjectContext>();
             services.AddSingleton<TokenMemoryRepository>();
             services.AddTransient<TokenValidationMiddleware>();
+
+
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IClienteService, ClienteService>();
         }
 
     }

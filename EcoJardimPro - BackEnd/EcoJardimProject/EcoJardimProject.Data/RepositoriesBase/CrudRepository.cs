@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EcoJardimProject.Data.RepositoriesBase
 {
-    internal class CrudRepository<TEntity> : QueryRepository<TEntity>, ICrudRepository<TEntity> where TEntity : class, IEntity
+    public class CrudRepository<TEntity> : QueryRepository<TEntity>, ICrudRepository<TEntity> where TEntity : class, IEntity
     {
         public CrudRepository(EcoJardimProjectContext context) : base(context)
         {
