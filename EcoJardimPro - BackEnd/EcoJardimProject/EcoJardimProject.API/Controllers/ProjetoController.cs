@@ -1,6 +1,5 @@
 using EcoJardimProject.API.Services;
 using EcoJardimProject.Data.ControllerBase;
-using EcoJardimProject.Data.ServicesBase;
 using EcoJardimProject.Domain.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -11,12 +10,11 @@ namespace EcoJardimProject.API.Controllers;
 [Route("[controller]")]
 [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [ApiController]
-public class ClienteController : MasterCrudController<Cliente>
+public class ProjetoController : MasterCrudController<Projeto>
 {
-    private IClienteService _service;
+    private IProjetoService _service;
 
-
-    public ClienteController(ILogger<MasterCrudController<Cliente>> logger, IClienteService service, string includePatch = "") : base(logger, service, includePatch)
+    public ProjetoController(ILogger<MasterCrudController<Projeto>> logger, IProjetoService service, string includePatch = "") : base(logger, service, includePatch)
     {
         _service = service;
     }

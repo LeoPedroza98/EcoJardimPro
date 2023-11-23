@@ -11,13 +11,12 @@ namespace EcoJardimProject.API.Controllers;
 [Route("[controller]")]
 [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [ApiController]
-public class ClienteController : MasterCrudController<Cliente>
+public class OrcamentoController : MasterCrudController<Orcamento>
 {
-    private IClienteService _service;
+   private IOrcamentoService _service;
 
-
-    public ClienteController(ILogger<MasterCrudController<Cliente>> logger, IClienteService service, string includePatch = "") : base(logger, service, includePatch)
-    {
-        _service = service;
-    }
+   public OrcamentoController(ILogger<MasterCrudController<Orcamento>> logger, IOrcamentoService service, string includePatch = "") : base(logger, service, includePatch)
+   {
+      _service = service;
+   }
 }
