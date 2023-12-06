@@ -38,13 +38,12 @@ export default {
     },
     methods: {
         logar() {
-
             setTimeout(() => {
                 this.service.Post(this.login).then(
                     (res) => {
                         setToken(res.data.tokenDeAcesso);
                         this.atualizarUsuario();
-                        NavigationHelper.navigate("home");
+                        NavigationHelper.navigate("Home");
                     },
                     (err) => {
                         removeToken();
