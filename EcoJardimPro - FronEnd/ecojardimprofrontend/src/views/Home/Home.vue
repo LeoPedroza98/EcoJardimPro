@@ -15,12 +15,8 @@ export default {
         }
     },
     mounted() {
-        const app = this.$app;
-        if (app) {
-            app.config.globalProperties.$on('atualizar-usuario', this.atualizarInformacoesUsuario);
-        }
-
         this.atualizarInformacoesUsuario();
+        this.$root.$on('atualizar-usuario', this.atualizarInformacoesUsuario);
     },
     methods: {
         atualizarInformacoesUsuario() {
