@@ -2,7 +2,7 @@ import http from "./ApiConfig";
 
 
 export class Service {
-    public _nomeControle: string = '';
+    public _nomeControle = '';
 
     constructor(nomeControle: string) {
         this._nomeControle = nomeControle;
@@ -10,7 +10,7 @@ export class Service {
 
     protected GetHeader() {
 
-        let header = {
+        const header = {
             headers: {
                 "Access-Control-Allow-Origin": "*",
             }

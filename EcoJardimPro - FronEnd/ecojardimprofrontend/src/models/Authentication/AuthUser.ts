@@ -4,6 +4,7 @@ export interface IAuthUserModel {
     sobrenome: string
     userName: string;
     role: string;
+    permissions: Array<string>;
   }
   
   
@@ -17,6 +18,9 @@ export interface IAuthUserModel {
     public userName: string;
   
     public role: string;
+
+    permissions: Array<string>;
+
   
     constructor() {
       this.id = '';
@@ -24,6 +28,7 @@ export interface IAuthUserModel {
       this.sobrenome  ='';
       this.userName = '';
       this.role = '';
+      this.permissions = [];
     }
   }
   

@@ -1,6 +1,7 @@
 import JwtHelper from '@/helpers/JwtHelper';
 import AuthUser,{IAuthUserModel} from '../models/Authentication/AuthUser'
 import Cookies from 'js-cookie';
+import { parsePermissions } from './Permission';
 
 export function setToken(token: string){
     Cookies.set('@ecojardimPro:token', token);
@@ -36,9 +37,17 @@ export function decode(token: string): IAuthUserModel  {
         sobrenome: decoded.sobrenome,
         userName: decoded.username,
         role: decoded.role,
+        permissions: decoded.permissions,
       };
       return data;
     }
   
     return new AuthUser();
+}
+
+export function getUserPermissions(token: string): string[] {
+    const decodedToken: any = JwtHelper.decodeToken(token);
+    const permissions: Array<string> = parsePermissions(decodedToken.permissions); 
+  
+    return permissions;
 }

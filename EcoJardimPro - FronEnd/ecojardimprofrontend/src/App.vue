@@ -1,10 +1,19 @@
 <template>
   <v-app>
     <v-main>
-      <RouterView></RouterView>
+      <router-view/>
     </v-main>
   </v-app>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
+});
 </script>

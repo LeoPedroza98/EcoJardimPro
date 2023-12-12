@@ -139,7 +139,7 @@ async function MensagemMixin(tempoMilissegundos: number, icone: SweetAlertIcon, 
 }
 
 async function AlertaExclusaoQuestaoBooleano(){
-    var excluir = false;
+    let excluir = false;
     const alert = await Swal.fire({
         title: 'Atenção!',
         text: 'Tem certeza que deseja excluir o registro atual?',
@@ -160,8 +160,8 @@ async function AlertaExclusaoQuestaoBooleano(){
     return excluir;
 }
 
-async function AlertaPerguntaSimOuNaoBooleano(pergunta: string, title: string = ''){
-    var excluir = false;
+async function AlertaPerguntaSimOuNaoBooleano(pergunta: string, title = ''){
+    let excluir = false;
     const alert = await Swal.fire({
         title: title? title : 'Atenção!',
         text: pergunta,

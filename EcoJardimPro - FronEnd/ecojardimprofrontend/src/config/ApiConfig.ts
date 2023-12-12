@@ -2,7 +2,7 @@ import axios from "axios";
 import {getToken, removeModoNoturno, removeToken} from '../config/Token';
 import Navigation from '../helpers/NavigationHelper'
 
-var httpHeader = {
+const httpHeader = {
   headers: {    
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Authorization",
@@ -11,7 +11,7 @@ var httpHeader = {
   }
 };
 
-var http = axios.create({
+const http = axios.create({
   baseURL: process.env.NODE_ENV == 'development' ? 'http://localhost:5104' : 'http://localhost:5104',
   headers: httpHeader.headers
 });
@@ -30,9 +30,9 @@ http.interceptors.request.use(async (config) => {
 http.interceptors.response.use((response) => {
   return response
 }, (error) => {
-  if (error.response.config.url !== 'login' && error.response.status === 401) {
+  if (error.response.config.url !== 'Login' && error.response.status === 401) {
     removeToken();
-    Navigation.navigate('/login');
+    Navigation.navigate('/Login');
   }
   return Promise.reject(error)
 })
