@@ -1,12 +1,20 @@
 import Vue from 'vue'
 import VueRouter, { NavigationGuardNext, Route, RouteConfig } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import { getToken, getUserPermissions } from '@/config/Token'
 import { AlertaSimples, AlertaPerguntaSimOuNaoBooleano } from '@/helpers/MensagemHelper'
+import PermissoesPadrao from '@/config/PermissoesPadrao'
 
 Vue.use(VueRouter)
 
-const routes: Array<RouteConfig> = [
+const routes = [
+  {
+    path: "*",
+    redirect: "/home"
+  },
+  {
+    path: "/",
+    redirect: "/login"
+  },
   {
     path: '/login',
     name: 'login',
@@ -15,22 +23,31 @@ const routes: Array<RouteConfig> = [
   {
     path: '/home',
     name: 'home',
-    component: () => import('@/views/HomeView.vue'),
+    component: () => import('@/views/Home.vue'),
     meta: { auth: true },
   },
 ]
 
 const router = new VueRouter({
   mode: 'history',
+  linkExactActiveClass: 'active',
   base: process.env.BASE_URL,
   routes
 })
 
-router.beforeEach((to: Route, from: Route, next: NavigationGuardNext) => {
-  const token: string | null = getToken();
 
-  if ((to.name !== 'login' && to.name !== 'recuperarSenha' && to.name !== 'confirmaEmail') && !token) {
-    next('/login' && '/recuperar-senha' && '/confirma-email');
+router.beforeEach((to: Route, from: Route, next: NavigationGuardNext) => {
+  console.log('Navigating from:', from.name);
+  console.log('Navigating to:', to.name);
+  const token: string | null = getToken();
+  console.log('Token:', token);
+
+  if ((to.name !== 'login') && !token) {
+    try {
+      next('/home');
+    } catch (e) {
+      // Handle error
+    }
   } else if (to.meta && to.meta.permissions) {
     const userPermissions: string[] = getUserPermissions(token);
     const requiredPermissions: string[] = to.meta.permissions as string[];
@@ -38,20 +55,21 @@ router.beforeEach((to: Route, from: Route, next: NavigationGuardNext) => {
     let hasAccess: boolean;
 
 
-    hasAccess = userPermissions.some(permission => requiredPermissions.includes(permission));
-
-
-    if (hasAccess) {
-      next();
+    if (requiredPermissions) {
+      hasAccess = requiredPermissions.every(item => userPermissions.includes(item));
     } else {
+      hasAccess = userPermissions.some(permission => requiredPermissions.includes(permission));
+    }
+
+
+    if (!hasAccess) {
       AlertaSimples('Acesso não autorizado', 'Você não possui permissão para acessar esta página', 'warning');
-      next('/home')
+      next('/home');
     }
   } else {
     next();
   }
 });
-
 
 const rotasParaForm = [
   '',

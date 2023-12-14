@@ -41,7 +41,7 @@ export default Vue.extend({
                     (res) => {
                         setToken(res.data.tokenDeAcesso);
                         this.atualizarUsuario();
-                        NavigationHelper.navigate("Home");
+                        NavigationHelper.navigate("home");
                     },
                     (err) => {
                         removeToken();
