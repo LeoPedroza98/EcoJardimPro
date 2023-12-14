@@ -16,4 +16,20 @@ public class Cliente : IEntity
     {
         Projetos = new List<Projeto>();
     }
+    
+    public List<string> Validate()
+    {
+        var errors = new List<string>();
+
+        if (string.IsNullOrEmpty(Nome))
+        {
+            errors.Add("Nome é obrigatório");
+        }
+
+        if (string.IsNullOrEmpty(Sobrenome))
+        {
+            errors.Add("Sobrenome é obrigatório");
+        }
+        return errors;
+    }
 }

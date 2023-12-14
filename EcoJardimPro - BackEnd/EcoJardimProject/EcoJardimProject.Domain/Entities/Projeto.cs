@@ -14,4 +14,26 @@ public class Projeto : IEntity
     public decimal Valor { get; set; }
     public long ClienteId { get; set; }
     public Cliente Cliente { get; set; }
+    
+    
+    public List<string> ValidateProjeto()
+    {
+        var errors = new List<string>();
+
+        if (string.IsNullOrEmpty(Nome))
+        {
+            errors.Add("Nome do Projeto é obrigatório");
+        }
+
+        if (string.IsNullOrEmpty(Descricao))
+        {
+            errors.Add("A Descrição do projeto é obrigatória");
+        }
+        
+        if (Valor <= 0)
+        {
+            errors.Add("O Valor do projeto é obrigatório");
+        }
+        return errors;
+    }
 }
