@@ -49,7 +49,12 @@ namespace EcoJardimProject.Data.ServicesBase
         public async virtual Task Patch(long id, JsonPatchDocument<TEntity> model, string include)
         {
             var domain = string.IsNullOrEmpty(include) ? await GetTracking(id) : await GetTracking(id, include);
-
+            
+            if (model.Operations.Any(op => op.path == null))
+            {
+                throw new Exception("Um caminho no documento de patch é nulo.");
+            }
+            
             if (domain == null)
                 throw new NotFoundException(MensagemHelper.RegistroNaoEncontrato);
 

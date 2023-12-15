@@ -97,7 +97,7 @@ namespace EcoJardimProject.Data.Migrations
                     b.Property<DateTime>("PrazoInicial")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("StatusId")
+                    b.Property<long?>("StatusId")
                         .HasColumnType("bigint");
 
                     b.Property<decimal>("Valor")
@@ -164,7 +164,7 @@ namespace EcoJardimProject.Data.Migrations
                     b.Property<long>("OrcamentoId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("StatusId")
+                    b.Property<long>("StatusId")
                         .HasColumnType("bigint");
 
                     b.Property<decimal>("Valor")
@@ -511,9 +511,7 @@ namespace EcoJardimProject.Data.Migrations
 
                     b.HasOne("EcoJardimProject.Domain.Entities.Status", "Status")
                         .WithMany()
-                        .HasForeignKey("StatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("StatusId");
 
                     b.Navigation("Cliente");
 
@@ -530,7 +528,9 @@ namespace EcoJardimProject.Data.Migrations
 
                     b.HasOne("EcoJardimProject.Domain.Entities.Status", "Status")
                         .WithMany()
-                        .HasForeignKey("StatusId");
+                        .HasForeignKey("StatusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Orcamento");
 

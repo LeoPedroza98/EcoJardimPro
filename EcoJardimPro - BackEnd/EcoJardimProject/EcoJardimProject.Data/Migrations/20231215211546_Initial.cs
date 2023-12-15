@@ -207,7 +207,7 @@ namespace EcoJardimProject.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StatusId = table.Column<long>(type: "bigint", nullable: false),
+                    StatusId = table.Column<long>(type: "bigint", nullable: true),
                     PrazoInicial = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PrazoFinal = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -226,8 +226,7 @@ namespace EcoJardimProject.Data.Migrations
                         name: "FK_Projetos_Status_StatusId",
                         column: x => x.StatusId,
                         principalTable: "Status",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -260,7 +259,7 @@ namespace EcoJardimProject.Data.Migrations
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Descrição = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    StatusId = table.Column<long>(type: "bigint", nullable: true),
+                    StatusId = table.Column<long>(type: "bigint", nullable: false),
                     OrcamentoId = table.Column<long>(type: "bigint", nullable: false),
                     DataInicio = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DataFinalizacao = table.Column<DateTime>(type: "datetime2", nullable: true)
@@ -278,7 +277,8 @@ namespace EcoJardimProject.Data.Migrations
                         name: "FK_Servicos_Status_StatusId",
                         column: x => x.StatusId,
                         principalTable: "Status",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(

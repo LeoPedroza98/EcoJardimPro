@@ -8,7 +8,7 @@ public class Orcamento : IEntity
     public DateTime DataCriacao { get; set; }
     public string Descricao { get; set; }
     public long ProjetoId { get; set; }
-    public Projeto Projeto { get; set; }
+    public Projeto? Projeto { get; set; }
     public List<Servico> Servicos { get; set; }
     
     public Orcamento()

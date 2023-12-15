@@ -16,7 +16,7 @@ public class ClienteController : MasterCrudController<Cliente>
     private IClienteService _service;
 
 
-    public ClienteController(ILogger<MasterCrudController<Cliente>> logger, IClienteService service, string includePatch = "") : base(logger, service, includePatch)
+    public ClienteController(ILogger<MasterCrudController<Cliente>> logger, IClienteService service, string includePatch = "Projetos") : base(logger, service, includePatch)
     {
         _service = service;
     }

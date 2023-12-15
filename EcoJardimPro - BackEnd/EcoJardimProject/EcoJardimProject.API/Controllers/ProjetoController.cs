@@ -14,7 +14,7 @@ public class ProjetoController : MasterCrudController<Projeto>
 {
     private IProjetoService _service;
 
-    public ProjetoController(ILogger<MasterCrudController<Projeto>> logger, IProjetoService service, string includePatch = "Status") : base(logger, service, includePatch)
+    public ProjetoController(ILogger<MasterCrudController<Projeto>> logger, IProjetoService service, string includePatch = "Status,Cliente") : base(logger, service, includePatch)
     {
         _service = service;
     }
