@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <sidebar v-model="abrirMenu"  />
-    <header />
     <v-main>
       <v-container class="containerPrincipal" fluid>
         <transition name="fade" mode="out-in">

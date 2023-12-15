@@ -6,12 +6,10 @@ import vuetify from './plugins/vuetify'
 
 
 import Sidebar from './components/Sidebar.vue'
-import Header from './components/Header.vue'
 Vue.config.productionTip = false
 
 
-Vue.component('sidebar', Sidebar);
-Vue.component('header',Header);
+Vue.component('sidebar', Sidebar)
 
 new Vue({
   router,

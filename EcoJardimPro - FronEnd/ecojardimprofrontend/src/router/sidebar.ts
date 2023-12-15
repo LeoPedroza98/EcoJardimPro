@@ -19,7 +19,33 @@ const items: Array<IMenuItem> = [
         roles: [
         ],
         permissions: []
-    }
+    },
+    {
+        name: 'clientes',
+        path: '/clientes',
+        label: 'Clientes',
+        icon: 'mdi-account-group-outline',
+        relatedRoutes: [
+            'pacientesForm',
+            'pacientesFormUpdate',
+            'pacientesFormView',
+        ],
+        roles: [
+
+        ],
+        permissions: []
+    },
+    {
+        name: 'projetos',
+        path: '/projetos',
+        label: 'Projetos',
+        icon: 'mdi-handshake',
+        relatedRoutes: [
+        ],
+        roles: [
+        ],
+        permissions: []
+    },
 ]
 
 export default items;

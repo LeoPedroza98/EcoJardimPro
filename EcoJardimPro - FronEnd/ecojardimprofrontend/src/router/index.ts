@@ -26,6 +26,18 @@ const routes = [
     component: () => import('@/views/Home.vue'),
     meta: { auth: true },
   },
+  {
+    path: '/clientes',
+    name: 'clientes',
+    component: () => import ('@/views/Clientes/ClientesLista.vue'),
+    meta: { auth: true}
+  },
+  {
+    path: '/projetos',
+    name: 'projetos',
+    component: () => import ('@/views/Projetos/ProjetosLista.vue'),
+    meta: { auth: true}
+  }
 ]
 
 const router = new VueRouter({
