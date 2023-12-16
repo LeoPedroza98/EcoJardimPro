@@ -1,17 +1,23 @@
+import Contato from "../objetosValor/Contato";
+import Endereco from "../objetosValor/Endereco";
+import Projeto from "../projeto/Projeto";
+
 export default class Cliente{
     public id: number;
     public nome: string;
     public sobrenome: string;
     public documento: string;
-
-    // public long Id { get; set; }
-    // public string Nome { get; set; }
-    // public string Sobrenome { get; set; }
-    // public string Documento { get; set; }
-    // public Endereco? Endereco { get; set; }
-    // public Contato? Contato { get; set; }
-    // public ICollection<Projeto> Projetos { get; set; }
+    public endereco!: Endereco;
+    public contato!: Contato;
+    public projetos: Projeto[] = [];
 
     constructor() {
+        this.id = 0
+        this.nome = ''
+        this.sobrenome = ''
+        this.documento = ''
+        this.endereco = new Endereco();
+        this.contato = new Contato();
+        this.projetos = []
     }
 }
