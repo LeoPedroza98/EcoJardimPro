@@ -5,5 +5,5 @@ namespace EcoJardimProject.API.Repositories;
 
 public interface IClienteRepository : ICrudRepository<Cliente>
 {
-    
+    Task<List<Cliente>> AutoComplete(string q);
 }

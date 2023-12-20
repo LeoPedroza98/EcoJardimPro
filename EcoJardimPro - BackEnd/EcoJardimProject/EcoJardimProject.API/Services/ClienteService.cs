@@ -12,4 +12,9 @@ public class ClienteService : CrudService<Cliente, IClienteRepository>, ICliente
     {
         
     }
+
+    public async Task<List<Cliente>> AutoComplete(string q)
+    {
+        return await _repository.AutoComplete(q);
+    }
 }
