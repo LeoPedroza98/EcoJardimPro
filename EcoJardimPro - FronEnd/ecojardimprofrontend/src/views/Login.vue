@@ -3,26 +3,27 @@
         <v-card flat>
             <v-row class="mb-6" justify="center" align="center">
                 <v-col col="12" sm="6" md="6">
-                    <v-img src="../../src/assets/ecojardimlogo.png"></v-img>
+                    <v-img src="../../src/assets/images/ecojardimlogo.png"></v-img>
                 </v-col>
                 <v-col col="12" sm="6" offset-sm="0" md="6" offset-md="0">
                     <v-form @submit.stop.prevent="logar()">
-                        <v-text-field outlined v-model="login.userName" label="Login"></v-text-field>
-                        <v-text-field outlined type="password" v-model="login.password" label="Senha"></v-text-field>
-                        <v-btn type="submit">Entrar</v-btn>
+                        <v-text-field color="#4CAF50" outlined v-model="login.userName" label="Login"></v-text-field>
+                        <v-text-field color="#4CAF50" outlined type="password" v-model="login.password" label="Senha"></v-text-field>
+                        <v-btn color="#4CAF50" type="submit">Entrar</v-btn>
                     </v-form>
                 </v-col>
             </v-row>
         </v-card>
     </v-container>
 </template>
-  
+
 <script lang="ts">
-import { setToken, removeToken } from '@/config/Token';
-import { AlertaSimplesErro } from '@/helpers/MensagemHelper';
-import NavigationHelper from '@/helpers/NavigationHelper';
-import Login from '@/models/usuario/Login';
-import { LoginService } from '@/services/LoginService';
+
+import { AlertaSimplesErro } from '@/components/shared/AlertService';
+import NavigationHelper from '@/core/config/NavigationHelper';
+import { setToken, removeToken } from '@/core/config/Token';
+import { Login } from '@/core/models/Authentication';
+import { LoginService } from '@/core/services/geral/LoginService';
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -37,11 +38,11 @@ export default Vue.extend({
     methods: {
         logar() {
             setTimeout(() => {
-                this.service.Post(this.login).then(
+                this.service.Salvar(this.login).then(
                     (res) => {
                         setToken(res.data.tokenDeAcesso);
                         this.atualizarUsuario();
-                        NavigationHelper.navigate("home");
+                        NavigationHelper.navigate("Home");
                     },
                     (err) => {
                         removeToken();

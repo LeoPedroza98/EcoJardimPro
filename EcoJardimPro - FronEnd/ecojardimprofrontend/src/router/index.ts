@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter, { NavigationGuardNext, Route, RouteConfig } from 'vue-router'
-import { getToken, getUserPermissions } from '@/config/Token'
-import { AlertaSimples, AlertaPerguntaSimOuNaoBooleano } from '@/helpers/MensagemHelper'
-import PermissoesPadrao from '@/config/PermissoesPadrao'
+import { AlertaSimples, AlertaPerguntaSimOuNaoBooleano } from '@/components/shared/AlertService'
+import { getToken, getUserPermissions } from '@/core/config/Token'
+import PermissoesPadrao from '@/core/config/PermissoesPadrao'
 
 Vue.use(VueRouter)
 
@@ -11,31 +11,28 @@ const routes = [
     path: "*",
     redirect: "/home"
   },
+  { path: '/', redirect: '/login' },
   {
-    path: "/",
-    redirect: "/login"
+    path: '/login', name: 'Login', component: () => import('../views/Login.vue')
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import('@/views/Login.vue')
+    path: '/home', name: 'Home', component: () => import('../views/Home.vue'),
+    meta: { auth: true }
   },
   {
-    path: '/home',
-    name: 'home',
-    component: () => import('@/views/Home.vue'),
-    meta: { auth: true },
+    path: '/geral/clientes', name: 'Cliente', component: () => import('../views/geral/clientes/Lista.vue'),
   },
   {
-    path: '/clientes',
-    name: 'clientes',
-    component: () => import ('@/views/Clientes/ClientesLista.vue'),
-    meta: { auth: true}
+    path: '/geral/projetos', name: 'Projeto', component: () => import('../views/geral/projetos/Lista.vue'),
   },
   {
-    path: '/projetos',
-    name: 'projetos',
-    component: () => import ('@/views/Projetos/ProjetosLista.vue'),
+    path: '/geral/orcamentos', name: 'Orcamento', component: () => import('../views/geral/orcamentos/Lista.vue'),
+  },
+  {
+    path: '/geral/servicos', name: 'Servico', component: () => import('../views/geral/servicos/Lista.vue'),
+  },
+  {
+    path: '/geral/usuario', name: 'Usuario', component: () => import('../views/geral/usuario/Lista.vue'),
     meta: { auth: true}
   }
 ]
@@ -47,40 +44,37 @@ const router = new VueRouter({
   routes
 })
 
+let isRedirected = false;
 
 router.beforeEach((to: Route, from: Route, next: NavigationGuardNext) => {
-  console.log('Navigating from:', from.name);
-  console.log('Navigating to:', to.name);
   const token: string | null = getToken();
-  console.log('Token:', token);
 
-  if ((to.name !== 'login') && !token) {
-    try {
-      next('/home');
-    } catch (e) {
-      // Handle error
-    }
+  if ((to.name !== 'login') && !token && !isRedirected) {
+      isRedirected = true;
+      next('/login');
   } else if (to.meta && to.meta.permissions) {
-    const userPermissions: string[] = getUserPermissions(token);
-    const requiredPermissions: string[] = to.meta.permissions as string[];
+      const userPermissions: string[] = getUserPermissions(token);
+      const requiredPermissions: string[] = to.meta.permissions as string[];
 
-    let hasAccess: boolean;
+      var hasAccess: boolean;
 
+      if (requiredPermissions && requiredPermissions.length > 0) {
+        const hasAccess = requiredPermissions.every(item => userPermissions.includes(item));
+      }
 
-    if (requiredPermissions) {
-      hasAccess = requiredPermissions.every(item => userPermissions.includes(item));
-    } else {
-      hasAccess = userPermissions.some(permission => requiredPermissions.includes(permission));
-    }
-
-
-    if (!hasAccess) {
-      AlertaSimples('Acesso não autorizado', 'Você não possui permissão para acessar esta página', 'warning');
-      next('/home');
-    }
+      if (hasAccess) {
+          next();
+      } else {
+          AlertaSimples('Acesso não autorizado', 'Você não possui permissão para acessar esta página', 'warning');
+          next('/home')
+      }
   } else {
-    next();
+      next();
   }
+});
+
+router.afterEach(() => {
+  isRedirected = false;
 });
 
 const rotasParaForm = [
@@ -92,10 +86,8 @@ const rotasParaFormEditar = [
 ];
 
 const naoPermitirParaRotas = [
-  'home',
-  'login',
-];
 
+];
 
 let confirmNavigation = true;
 
