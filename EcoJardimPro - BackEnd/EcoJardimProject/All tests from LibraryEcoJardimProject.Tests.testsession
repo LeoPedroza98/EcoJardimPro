@@ -1,20 +1,19 @@
-Library (9 tests) Success
-  EcoJardimProject.Tests (9 tests) Success
-    EcoJardimProject.Tests (9 tests) Success
-      Clientes (4 tests) Success
-        ClientesControllerTeste (1 test) Success
-          Post_ReturnsBadRequestOnError Success
-        ClientesModelsTeste (2 tests) Success
-          NomeDeveSerObrigatorio Success
-          SobrenomeDeveSerObrigatorio Success
-        ClientesServicesTeste (1 test) Success
-          Post_ValidatesModelBeforeSaving Success
-      Projetos (5 tests) Success
-        ProjetoControllerTeste (1 test) Success
-          Post_ReturnsBadRequestOnError Success
-        ProjetosModelsTeste (3 tests) Success
-          DescricaoProjetoDeveSerObrigatorio Success
-          NomeProjetoDeveSerObrigatorio Success
-          ValorProjetoDeveSerObrigatorio Success
-        ProjetosServicesTeste (1 test) Success
-          Post_ValidatesModelBeforeSaving Success
+async function AlertExcludeQuestion(promise: any){
+
+    const alert = await Swal.fire({
+        title: 'Atenção!',
+        text: 'Tem certeza que deseja excluir o registro atual?',
+        icon: 'question',
+        showDenyButton: true,
+        confirmButtonText: 'Sim',
+        denyButtonText: 'Não',
+        showCloseButton: true,
+        preConfirm: () => {
+            promise();
+        }   
+    }).then( (result) => {
+        if(result.value){
+            AlertSimple("Aviso", "Operação Sucesso", "success");
+        }
+    });
+}

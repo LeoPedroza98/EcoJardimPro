@@ -16,13 +16,13 @@ public class MasterQueryController<TEntity> : MasterBaseController where TEntity
 {
     protected readonly ILogger<MasterQueryController<TEntity>> _logger;
     private readonly IQueryService<TEntity> _service;
-    
+
     public MasterQueryController(ILogger<MasterQueryController<TEntity>> logger, IQueryService<TEntity> service) : base()
     {
         _logger = logger;
         _service = service;
     }
-    
+
     protected IQueryable<TEntity> GetFiltered(IQueryable query, ODataQueryOptions<TEntity> options)
     {
         var odataSettings = new ODataQuerySettings();
@@ -44,9 +44,9 @@ public class MasterQueryController<TEntity> : MasterBaseController where TEntity
 
         return query.Cast<TEntity>();
     }
-    
+
     [HttpGet]
-    public virtual ActionResult<List<TEntity>> Get(ODataQueryOptions<TEntity> options, [FromHeader] string include)
+    public virtual ActionResult<List<TEntity>> Get(ODataQueryOptions<TEntity> options, [FromHeader] string include = null)
     {
         try
         {
@@ -62,7 +62,7 @@ public class MasterQueryController<TEntity> : MasterBaseController where TEntity
                 $"{MensagemHelper.AlgumErroOcorreu} {e.Message} - {e.InnerException?.Message}");
         }
     }
-    
+
     [HttpGet("listar")]
     public virtual ActionResult<List<TEntity>> GetNoInclude(ODataQueryOptions<TEntity> options)
     {
@@ -80,7 +80,7 @@ public class MasterQueryController<TEntity> : MasterBaseController where TEntity
                 $"{MensagemHelper.AlgumErroOcorreu} {e.Message} - {e.InnerException?.Message}");
         }
     }
-    
+
     [HttpGet("{id}")]
     public virtual async Task<ActionResult<TEntity>> GetById(long id)
     {
