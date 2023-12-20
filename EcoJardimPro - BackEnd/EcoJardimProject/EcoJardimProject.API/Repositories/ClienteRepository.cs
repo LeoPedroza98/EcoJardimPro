@@ -17,7 +17,7 @@ public class ClienteRepository : CrudRepository<Cliente>,IClienteRepository
         _context = context;
     }
 
-     public async Task<List<Cliente>> AutoComplete(string q)
+    public async Task<List<Cliente>> AutoComplete(string q)
     {
         var query = _context.Clientes
             .AsNoTracking()

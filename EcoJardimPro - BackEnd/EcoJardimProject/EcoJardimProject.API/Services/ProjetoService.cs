@@ -9,4 +9,9 @@ public class ProjetoService: CrudService<Projeto,IProjetoRepository>,IProjetoSer
     public ProjetoService(IProjetoRepository repository) : base(repository)
     {
     }
+
+    public async Task<List<Projeto>> AutoComplete(string q)
+    {
+        return await _repository.AutoComplete(q);
+    }
 }
