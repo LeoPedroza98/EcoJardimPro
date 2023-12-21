@@ -8,11 +8,11 @@ export class Servico implements Shared.IEntity {
     descricao: string = ""
     valor: number = 0
     statusId:number
-    status?: Status = new Status()
+    status!: Status
     orcamentoId: number = 0
     orcamento!: Orcamento;
-    dataInicio?:string = ""
-    dataFinalizacao?:string = ""
+    dataInicio?:string;
+    dataFinalizacao?:string;
 
     constructor(model?: Servico) {
         if (!model)
@@ -25,7 +25,7 @@ export class Servico implements Shared.IEntity {
         this.status = model.status
         this.orcamentoId = model.orcamentoId
         this.orcamento = model.orcamento
-        this.dataInicio = model.dataInicio
-        this.dataFinalizacao = model.dataFinalizacao
+        this.dataInicio = model.dataInicio ? model.dataInicio.toDateYYYYMMDD() : ''
+        this.dataFinalizacao = model.dataFinalizacao ? model.dataFinalizacao.toDateYYYYMMDD() : ''
     }
 }

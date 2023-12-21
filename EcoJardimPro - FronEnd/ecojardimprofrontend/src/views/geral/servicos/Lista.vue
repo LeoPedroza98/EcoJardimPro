@@ -136,7 +136,7 @@ export default class ListaServicos extends PageBase {
 
   AbrirDialogCadastro(item?: Servico) {
     if(item){
-        this.service.ObterPorId(item.id,"Status,Orcamento.Projeto").then(
+        this.service.ObterPorId(item.id,"Orcamento.Projeto").then(
             res => {
                 this.item = new Servico(res.data);
             },

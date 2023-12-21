@@ -38,6 +38,10 @@
                                                         item-value="id" item-text="nome" :items="projetos" outlined dense />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
+                                                    <v-text-field v-model="item.nome" label="Nome"
+                                                        :rules="fieldRules" :counter="60" dense outlined />
+                                                </v-col>
+                                                <v-col cols="12" sm="12" md="4" lg="4">
                                                     <v-text-field v-model="item.descricao" label="Descrição"
                                                         :rules="fieldRules" :counter="60" dense outlined />
                                                 </v-col>
