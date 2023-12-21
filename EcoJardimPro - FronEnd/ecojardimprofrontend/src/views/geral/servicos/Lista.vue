@@ -10,7 +10,6 @@
           style="display: flex; flex-wrap: wrap; row-gap: 15px; align-items: center; column-gap:10px"
           :style="!$vuetify.breakpoint.mobile ? 'justify-content: flex-end' : 'justify-content: space-evenly'">
           <v-btn class="btn" @click="Atualizar()"> <v-icon>mdi-update</v-icon> Atualizar </v-btn>
-          <v-btn class="btn" @click="sheet = true"> <v-icon>mdi-filter</v-icon> Filtrar </v-btn>
           <v-btn class="btn btn-primary" @click="AbrirDialogCadastro()"> <v-icon>mdi-plus</v-icon> Adicionar
           </v-btn>
         </v-col>

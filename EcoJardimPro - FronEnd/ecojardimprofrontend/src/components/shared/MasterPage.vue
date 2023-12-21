@@ -106,7 +106,6 @@ export default Vue.extend({
         { name: 'Projetos', icon: 'mdi-handshake', path: '/geral/projetos', restrito: false },
         { name: 'Orçamentos', icon: 'mdi-account-cash', path: '/geral/orcamentos', restrito: false },
         { name: 'Serviços', icon: 'mdi-account-wrench', path: '/geral/servicos', restrito: false },
-        {name:'Usuário', icon:'mdi-account', path:'/geral/usuario', restrito: false},
       ],
     };
   },

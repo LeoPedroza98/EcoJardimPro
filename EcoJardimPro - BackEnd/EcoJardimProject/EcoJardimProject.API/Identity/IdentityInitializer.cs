@@ -29,13 +29,26 @@ public class IdentityInitializer
     }
     
     public async Task Initialize()
+{
+    List<Usuario> usuarios = new List<Usuario>
     {
-        await CreateUser(new Usuario
+        new Usuario
         {
             UserName = "leo",
             Nome = "Leonardo",
             Sobrenome = "Pedroza",
+        },
+        new Usuario
+        {
+            UserName = "armenio",
+            Nome = "Armenio",
+            Sobrenome = "Cardoso",
+        },
+    };
 
-        }, "123@Alterar");
+    foreach (var usuario in usuarios)
+    {
+        await CreateUser(usuario, "123@Alterar");
     }
+}
 }

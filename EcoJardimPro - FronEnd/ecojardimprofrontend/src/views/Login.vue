@@ -10,6 +10,9 @@
                         <v-text-field color="#4CAF50" outlined v-model="login.userName" label="Login"></v-text-field>
                         <v-text-field color="#4CAF50" outlined type="password" v-model="login.password" label="Senha"></v-text-field>
                         <v-btn color="#4CAF50" type="submit">Entrar</v-btn>
+                        <v-spacer></v-spacer>
+                        <br>
+                        <v-btn color="blue" @click="registroUsuarios()">Cadastre-se</v-btn>
                     </v-form>
                 </v-col>
             </v-row>
@@ -50,6 +53,9 @@ export default Vue.extend({
                     }
                 );
             }, 1500);
+        },
+        registroUsuarios(){
+            this.$router.push({ name: 'Registro' });
         },
         atualizarUsuario() {
             this.$emit('atualizar-usuario');

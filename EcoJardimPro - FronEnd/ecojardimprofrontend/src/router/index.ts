@@ -12,8 +12,12 @@ const routes = [
     redirect: "/home"
   },
   { path: '/', redirect: '/login' },
+  { path: '/', redirect: '/cadastro' },
   {
     path: '/login', name: 'Login', component: () => import('../views/Login.vue')
+  },
+  {
+    path: '/registro', name: 'Registro', component: () => import('../views/usuarios/Cadastro.vue')
   },
   {
     path: '/home', name: 'Home', component: () => import('../views/Home.vue'),
