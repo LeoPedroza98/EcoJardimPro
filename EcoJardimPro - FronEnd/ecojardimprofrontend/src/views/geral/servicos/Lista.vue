@@ -98,7 +98,9 @@ export default class ListaServicos extends PageBase {
   ];
   header: any[] = [
     { text: '', value: 'actions', sortable: false, class: 'action', use: true },
-    { text: 'Nome', value: 'nome', use: true },
+    { text: 'Nome do Serviço', value: 'nome', use: true },
+    { text: 'Projeto', value: 'orcamento.projeto.nome', use: true },
+    { text: 'Orçamento', value: 'orcamento.descricao', use: true },
     { text: 'Descrição', value: 'descrição', use: true },
     { text: 'Valor', value: 'valor', use: true },
     { text: 'Status', value: 'status.nome', use: true },
@@ -120,7 +122,7 @@ export default class ListaServicos extends PageBase {
     const { page, itemsPerPage, sortBy, sortDesc, search, columns } = this.options;
     this.loading = true;
 
-    this.service.Listar(page, itemsPerPage, sortBy, sortDesc, this.search, this.header,undefined, 'Status,Orcamento').then(
+    this.service.Listar(page, itemsPerPage, sortBy, sortDesc, this.search, this.header,undefined, 'Status,Orcamento,Orcamento.Projeto').then(
       res => {
         this.lista = res.data.items;
         this.total = res.data.count;

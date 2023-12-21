@@ -5,11 +5,11 @@ import { Servico } from "./Servico";
 
 export class Orcamento implements Shared.IEntity {
     id: number = 0;
-    dataCriacao: string = '0001-01-01T00:00:00'
-    descricao: string = ''
+    dataCriacao: string = ""
+    descricao: string = ""
     projetoId: number = 0
-    projeto: Projeto = new Projeto();
-    public servicos: Servico[] = [];
+    projeto!: Projeto;
+    servicos: Servico[] = [];
 
     constructor(model?: Orcamento) {
         if (!model)

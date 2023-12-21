@@ -62,7 +62,7 @@
         </v-card>
       </v-sheet>
     </v-bottom-sheet>
-    <cadastro-cliente v-model="dialogCadastro" :item="item" @fechou="dialogCadastro = false" @salvou="Atualizar()" />
+    <cadastro-orcamento v-model="dialogCadastro" :item="item" @fechou="dialogCadastro = false" @salvou="Atualizar()" />
   </master-page>
 </template>
 <script lang="ts">
@@ -99,7 +99,6 @@ export default class ListaProjetos extends PageBase {
   header: any[] = [
     { text: '', value: 'actions', sortable: false, class: 'action', use: true },
     { text: 'Descrição', value: 'descricao', use: true },
-    { text: 'Data de Criação', value: 'dataCriacao', use: true },
     { text: 'Data de Criação', value: 'dataCriacao', use: true },
     { text: 'Nome do Projeto', value: 'projeto.nome', use: true },
     { text: 'Status', value: 'projeto.status.nome', use: true },
