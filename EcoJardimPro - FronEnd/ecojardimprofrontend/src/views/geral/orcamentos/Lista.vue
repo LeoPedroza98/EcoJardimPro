@@ -26,6 +26,9 @@
             <v-icon @click="ExcluirRegistro(item)">mdi-delete</v-icon>
           </div>
         </template>
+        <template v-slot:[`item.dataCriacao`]="{ item }">
+            {{ item.dataCriacao ? item.dataCriacao.toDateDDMMYYYY() : '' }}
+        </template>
       </v-data-table>
       <div class="mt-4 mx-3">
         <v-row style="display: flex; justify-content: flex-end; align-items: center;" dense>
@@ -98,6 +101,7 @@ export default class ListaProjetos extends PageBase {
   ];
   header: any[] = [
     { text: '', value: 'actions', sortable: false, class: 'action', use: true },
+    { text: 'Nome do Orçamento', value: 'nome', use: true },
     { text: 'Descrição', value: 'descricao', use: true },
     { text: 'Data de Criação', value: 'dataCriacao', use: true },
     { text: 'Nome do Projeto', value: 'projeto.nome', use: true },
@@ -136,7 +140,10 @@ export default class ListaProjetos extends PageBase {
     if(item){
         this.service.ObterPorId(item.id).then(
             res => {
-                this.item = new Orcamento(res.data);
+              this.item = new Orcamento(res.data);
+              this.item.dataCriacao = this.item.dataCriacao?.toDateYYYYMMDD();
+              this.dialogCadastro = true;
+              
             },
             err => {
                 AlertaSimplesErro("Aviso", err);

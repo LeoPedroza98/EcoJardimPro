@@ -26,6 +26,12 @@
             <v-icon @click="ExcluirRegistro(item)">mdi-delete</v-icon>
           </div>
         </template>
+        <template v-slot:[`item.prazoInicial`]="{ item }">
+          {{ item.prazoInicial ? item.prazoInicial.toDateDDMMYYYY() : '' }}
+        </template>
+        <template v-slot:[`item.prazoFinal`]="{ item }">
+          {{ item.prazoFinal ? item.prazoFinal.toDateDDMMYYYY() : '' }}
+        </template>
       </v-data-table>
       <div class="mt-4 mx-3">
         <v-row style="display: flex; justify-content: flex-end; align-items: center;" dense>
@@ -102,7 +108,7 @@ export default class ListaProjetos extends PageBase {
     { text: 'Descrição', value: 'descricao', use: true },
     { text: 'Cliente', value: 'cliente.nome', use: true },
     { text: 'Prazo Inicial', value: 'prazoInicial', use: true },
-    { text: 'Prazo Final', value: 'prazoFinal', use: true },
+    { text: 'Prazo Final(Estimativa)', value: 'prazoFinal', use: true },
     { text: 'Status', value: 'status.nome', use: true },
   ];
   $vuetify: any;
@@ -122,7 +128,7 @@ export default class ListaProjetos extends PageBase {
     const { page, itemsPerPage, sortBy, sortDesc, search, columns } = this.options;
     this.loading = true;
 
-    this.service.Listar(page, itemsPerPage, sortBy, sortDesc, this.search, this.header,undefined, 'Cliente,Status').then(
+    this.service.Listar(page, itemsPerPage, sortBy, sortDesc, this.search, this.header, undefined, 'Cliente,Status').then(
       res => {
         this.lista = res.data.items;
         this.total = res.data.count;
@@ -135,18 +141,21 @@ export default class ListaProjetos extends PageBase {
   }
 
   AbrirDialogCadastro(item?: Projeto) {
-    if(item){
-        this.service.ObterPorId(item.id, 'Cliente').then(
-            res => {
-                this.item = new Projeto(res.data);
-            },
-            err => {
-                AlertaSimplesErro("Aviso", err);
-            }
-        )
+    if (item) {
+      this.service.ObterPorId(item.id, 'Cliente').then(
+        res => {
+          this.item = new Projeto(res.data);
+          this.item.prazoInicial = this.item.prazoInicial?.toDateYYYYMMDD();
+          this.item.prazoFinal = this.item.prazoFinal?.toDateYYYYMMDD();
+          this.dialogCadastro = true;
+        },
+        err => {
+          AlertaSimplesErro("Aviso", err);
+        }
+      )
     }
-    else{
-        this.item = new Projeto();
+    else {
+      this.item = new Projeto();
     }
 
     this.dialogCadastro = true;
@@ -193,4 +202,5 @@ export default class ListaProjetos extends PageBase {
 
 .page-item {
   background: red !important;
-}</style>
+}
+</style>

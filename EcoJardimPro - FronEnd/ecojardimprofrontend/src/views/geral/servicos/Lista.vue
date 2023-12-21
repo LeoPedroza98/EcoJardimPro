@@ -101,7 +101,7 @@ export default class ListaServicos extends PageBase {
     { text: 'Nome do Serviço', value: 'nome', use: true },
     { text: 'Projeto', value: 'orcamento.projeto.nome', use: true },
     { text: 'Orçamento', value: 'orcamento.descricao', use: true },
-    { text: 'Descrição', value: 'descrição', use: true },
+    { text: 'Descrição', value: 'descricao', use: true },
     { text: 'Valor', value: 'valor', use: true },
     { text: 'Status', value: 'status.nome', use: true },
   ];

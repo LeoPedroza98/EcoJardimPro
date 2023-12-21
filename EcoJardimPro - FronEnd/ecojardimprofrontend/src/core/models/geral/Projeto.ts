@@ -23,8 +23,8 @@ export class Projeto implements Shared.IEntity {
         this.descricao = model.descricao
         this.statusId = model.statusId
         this.status = model.status
-        this.prazoInicial = model.prazoInicial
-        this.prazoFinal = model.prazoFinal
+        this.prazoInicial = model.prazoInicial ? model.prazoInicial.toDateYYYYMMDD() : ''
+        this.prazoFinal = model.prazoFinal ? model.prazoFinal.toDateYYYYMMDD() : ''
         this.valor = model.valor
         this.clienteId = model.clienteId
         this.cliente = model.cliente

@@ -33,19 +33,19 @@
                                         <v-card-title>Orçamento</v-card-title>
                                         <v-card-text class="mt-2">
                                             <v-row dense>
-                                                <v-col cols="12" sm="12" md="4" lg="4">
+                                                <v-col cols="12" sm="12" md="6" lg="6">
                                                     <v-select v-model="item.projetoId" label="Projetos" :rules="fieldRules"
                                                         item-value="id" item-text="nome" :items="projetos" outlined dense />
                                                 </v-col>
-                                                <v-col cols="12" sm="12" md="4" lg="4">
+                                                <v-col cols="12" sm="12" md="6" lg="6">
                                                     <v-text-field v-model="item.nome" label="Nome"
                                                         :rules="fieldRules" :counter="60" dense outlined />
                                                 </v-col>
-                                                <v-col cols="12" sm="12" md="4" lg="4">
+                                                <v-col cols="12" sm="12" md="6" lg="6">
                                                     <v-text-field v-model="item.descricao" label="Descrição"
                                                         :rules="fieldRules" :counter="60" dense outlined />
                                                 </v-col>
-                                                <v-col cols="12" sm="12" md="4" lg="4">
+                                                <v-col cols="12" sm="12" md="6" lg="6">
                                                     <v-text-field v-model="item.dataCriacao" label="Data de Criação"
                                                         :rules="fieldRules" :counter="60" dense outlined />
                                                 </v-col>
