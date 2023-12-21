@@ -33,15 +33,15 @@
                                         <v-card-text class="mt-2">
                                             <v-row dense>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
-                                                    <v-text-field v-model="item.nome" label="Nome" :rules="fieldRules"
+                                                    <v-text-field color="#4CAF50" v-model="item.nome" label="Nome" :rules="fieldRules"
                                                         :counter="20" dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
-                                                    <v-text-field v-model="item.sobrenome" label="Sobrenome"
+                                                    <v-text-field color="#4CAF50" v-model="item.sobrenome" label="Sobrenome"
                                                         :rules="fieldRules" :counter="30" dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
-                                                    <v-text-field v-model="item.documento" label="Documento"
+                                                    <v-text-field color="#4CAF50" v-model="item.documento" label="Documento"
                                                         :rules="fieldRules" :counter="30" dense outlined />
                                                 </v-col>
                                             </v-row>
@@ -56,27 +56,27 @@
                                         <v-card-text class="mt-2">
                                             <v-row dense>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
-                                                    <v-text-field v-model="item.endereco.cep" label="CEP" :counter="20"
+                                                    <v-text-field color="#4CAF50" v-model="item.endereco.cep" label="CEP" :counter="20"
                                                         dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
-                                                    <v-text-field v-model="item.endereco.logradouro" label="Logradouro"
+                                                    <v-text-field color="#4CAF50" v-model="item.endereco.logradouro" label="Logradouro"
                                                         dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
-                                                    <v-text-field v-model="item.endereco.numero" label="Numero" dense
+                                                    <v-text-field color="#4CAF50" v-model="item.endereco.numero" label="Numero" dense
                                                         outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
-                                                    <v-text-field v-model="item.endereco.complemento" label="Complemento"
+                                                    <v-text-field color="#4CAF50" v-model="item.endereco.complemento" label="Complemento"
                                                         dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
-                                                    <v-text-field v-model="item.endereco.bairro" label="Bairro" dense
+                                                    <v-text-field color="#4CAF50" v-model="item.endereco.bairro" label="Bairro" dense
                                                         outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
-                                                    <v-text-field v-model="item.endereco.municipio" label="Municipio" dense
+                                                    <v-text-field color="#4CAF50" v-model="item.endereco.municipio" label="Municipio" dense
                                                         outlined />
                                                 </v-col>
                                             </v-row>
@@ -91,19 +91,19 @@
                                         <v-card-text class="mt-2">
                                             <v-row dense>
                                                 <v-col cols="12" sm="12" md="6" lg="6">
-                                                    <v-text-field v-model="item.contato.nome" label="Nome do Contato" :counter="20"
+                                                    <v-text-field color="#4CAF50" v-model="item.contato.nome" label="Nome do Contato" :counter="20"
                                                         dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="6" lg="6">
-                                                    <v-text-field v-model="item.contato.email" label="Email"
+                                                    <v-text-field color="#4CAF50" v-model="item.contato.email" label="Email"
                                                         dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="6" lg="6">
-                                                    <v-text-field v-model="item.contato.celular" label="Celular" :counter="11"
+                                                    <v-text-field color="#4CAF50" v-model="item.contato.celular" label="Celular" :counter="11"
                                                         dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="6" lg="6">
-                                                    <v-text-field v-model="item.contato.telefone" label="Telefone Fixo"
+                                                    <v-text-field color="#4CAF50" v-model="item.contato.telefone" label="Telefone Fixo"
                                                         dense outlined />
                                                 </v-col>
                                             </v-row>
