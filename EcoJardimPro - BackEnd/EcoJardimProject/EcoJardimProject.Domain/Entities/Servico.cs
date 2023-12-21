@@ -6,7 +6,7 @@ public class Servico: IEntity
 {
     public long Id { get; set; }
     public string Nome { get; set; }
-    public string Descrição { get; set; }
+    public string Descricao { get; set; }
     public decimal Valor { get; set; }
     public long StatusId { get; set; }
     public Status? Status { get; set; }
