@@ -12,4 +12,9 @@ public class OrcamentoService: CrudService<Orcamento, IOrcamentoRepository>, IOr
     {
         _repository = repository;
     }
+
+    public async Task<List<Orcamento>> AutoComplete(string q)
+    {
+        return await _repository.AutoComplete(q);
+    }
 }

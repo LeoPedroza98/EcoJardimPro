@@ -5,5 +5,5 @@ namespace EcoJardimProject.API.Services;
 
 public interface IOrcamentoService : ICrudService<Orcamento>
 {
-    
+    Task<List<Orcamento>> AutoComplete(string q);
 }

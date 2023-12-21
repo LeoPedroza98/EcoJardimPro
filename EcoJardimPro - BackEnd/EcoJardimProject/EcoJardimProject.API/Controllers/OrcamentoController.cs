@@ -19,4 +19,23 @@ public class OrcamentoController : MasterCrudController<Orcamento>
    {
       _service = service;
    }
+
+    [HttpGet("AutoComplete")]
+    public async Task<ActionResult<List<Orcamento>>> AutoComplete(string q)
+    {
+        if (string.IsNullOrEmpty(q))
+            return BadRequest("Filtro não informado!");
+
+        try
+        {
+            var lista = await _service.AutoComplete(q);
+
+            return Ok(lista);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                $"Algum erro ocorreu! {e.Message} - {e.InnerException?.Message}");
+        }
+    }
 }
