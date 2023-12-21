@@ -22,7 +22,7 @@ public class OrcamentoRepository: CrudRepository<Orcamento>,IOrcamentoRepository
         var query = _context.Orcamentos
             .AsNoTracking()
             .Where(x =>
-                x.Projeto.Nome.ToUpper().Contains(q.ToUpper()) && x.Descricao.ToUpper().Contains(q.ToUpper()));
+                x.Descricao.ToUpper().Contains(q.ToUpper()));
 
         return await query.ToListAsync();
     }

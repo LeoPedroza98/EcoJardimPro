@@ -8,6 +8,7 @@ import BreadCrumb from "./shared/BreadCrumb.vue";
 import Cliente from "./geral/cliente/Cadastro.vue";
 import Projeto from "./geral/projeto/Cadastro.vue";
 import Orcamento from "./geral/orcamento/Cadastro.vue"
+import Servico from "./geral/servico/Cadastro.vue"
 
 Vue.component("master-page", MasterPage);
 Vue.component("text-search", TextSearch);
@@ -16,4 +17,5 @@ Vue.component("breadCrumb-component", BreadCrumb);
 Vue.component("cadastro-cliente",Cliente)
 Vue.component("cadastro-projeto",Projeto)
 Vue.component("cadastro-orcamento", Orcamento);
+Vue.component("cadastro-servico", Servico);
 //CADASTROS

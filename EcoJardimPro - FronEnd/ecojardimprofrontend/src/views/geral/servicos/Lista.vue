@@ -62,7 +62,7 @@
         </v-card>
       </v-sheet>
     </v-bottom-sheet>
-    <cadastro-cliente v-model="dialogCadastro" :item="item" @fechou="dialogCadastro = false" @salvou="Atualizar()" />
+    <cadastro-servico v-model="dialogCadastro" :item="item" @fechou="dialogCadastro = false" @salvou="Atualizar()" />
   </master-page>
 </template>
 <script lang="ts">
@@ -122,7 +122,7 @@ export default class ListaServicos extends PageBase {
     const { page, itemsPerPage, sortBy, sortDesc, search, columns } = this.options;
     this.loading = true;
 
-    this.service.Listar(page, itemsPerPage, sortBy, sortDesc, this.search, this.header,undefined, 'Status,Orcamento,Orcamento.Projeto').then(
+    this.service.Listar(page, itemsPerPage, sortBy, sortDesc, this.search, this.header,undefined, 'Status,Orcamento.Projeto').then(
       res => {
         this.lista = res.data.items;
         this.total = res.data.count;
@@ -136,7 +136,7 @@ export default class ListaServicos extends PageBase {
 
   AbrirDialogCadastro(item?: Servico) {
     if(item){
-        this.service.ObterPorId(item.id).then(
+        this.service.ObterPorId(item.id,"Status,Orcamento.Projeto").then(
             res => {
                 this.item = new Servico(res.data);
             },

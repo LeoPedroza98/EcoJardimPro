@@ -10,9 +10,9 @@ export class Servico implements Shared.IEntity {
     statusId:number
     status?: Status = new Status()
     orcamentoId: number = 0
-    orcamento?: Orcamento = new Orcamento()
-    dataInicio?:string = "0001-01-01T00:00:00"
-    dataFinalizacao?:string = "0001-01-01T00:00:00"
+    orcamento!: Orcamento;
+    dataInicio?:string = ""
+    dataFinalizacao?:string = ""
 
     constructor(model?: Servico) {
         if (!model)
