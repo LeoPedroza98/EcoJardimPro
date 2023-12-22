@@ -7,7 +7,7 @@
                         <v-btn icon @click="Close()" class="mr-4">
                             <v-icon color="red">mdi-close</v-icon>
                         </v-btn>
-                        <v-toolbar-title color="black">{{ item.id > 0 ? "Editar" : "Criar" }} Projeto </v-toolbar-title>
+                        <v-toolbar-title color="black">{{ item.id > 0 ? "Editar" : "Criar" }} Serviço </v-toolbar-title>
                         <v-spacer />
                         <v-toolbar-items>
                             <v-btn class="btn btn-primary" @click="Salvar()"> <v-icon>mdi-plus</v-icon> Salvar
@@ -16,7 +16,7 @@
                     </div>
                     <template v-slot:extension>
                         <v-tabs v-model="tabActive" color="black">
-                            <v-tab>Projeto</v-tab>
+                            <v-tab>Serviço</v-tab>
                         </v-tabs>
                     </template>
                 </v-toolbar>
@@ -28,7 +28,7 @@
                             <v-row dense>
                                 <v-col cols="12" sm="12" md="12">
                                     <v-card flat>
-                                        <v-card-title>Projeto</v-card-title>
+                                        <v-card-title>Serviço</v-card-title>
                                         <v-card-text class="mt-2">
                                             <v-row dense>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
@@ -49,11 +49,11 @@
                                                         :rules="fieldRules" :counter="80" dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
-                                                    <v-text-field color="#4CAF50" v-model="item.dataInicio" label="Data de Inicio"
+                                                    <v-text-field type="date" color="#4CAF50" v-model="item.dataInicio" label="Data de Inicio"
                                                      dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
-                                                    <v-text-field color="#4CAF50" v-model="item.dataFinalizacao" label="Data de Finalização"
+                                                    <v-text-field type="date" color="#4CAF50" v-model="item.dataFinalizacao" label="Data de Finalização"
                                                      dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">

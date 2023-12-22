@@ -137,10 +137,10 @@ export default class ListaProjetos extends PageBase {
 
   AbrirDialogCadastro(item?: Orcamento) {
     if(item){
-        this.service.ObterPorId(item.id).then(
+        this.service.ObterPorId(item.id, "Projeto,Servico").then(
             res => {
               this.item = new Orcamento(res.data);
-              this.item.dataCriacao = this.item.dataCriacao?.toDateYYYYMMDD();
+              // this.item.dataCriacao = this.item.dataCriacao?.toDateYYYYMMDD();
               this.dialogCadastro = true;
               
             },

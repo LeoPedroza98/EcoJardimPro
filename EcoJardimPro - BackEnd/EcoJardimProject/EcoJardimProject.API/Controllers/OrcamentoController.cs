@@ -15,7 +15,7 @@ public class OrcamentoController : MasterCrudController<Orcamento>
 {
    private IOrcamentoService _service;
 
-   public OrcamentoController(ILogger<MasterCrudController<Orcamento>> logger, IOrcamentoService service, string includePatch = "Projeto,Servico") : base(logger, service, includePatch)
+   public OrcamentoController(ILogger<MasterCrudController<Orcamento>> logger, IOrcamentoService service, string includePatch = "Projeto,Servicos") : base(logger, service, includePatch)
    {
       _service = service;
    }
