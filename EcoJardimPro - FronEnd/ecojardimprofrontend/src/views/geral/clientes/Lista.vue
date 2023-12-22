@@ -101,6 +101,8 @@ export default class ListaClientes extends PageBase {
     { text: 'Nome', value: 'nome', use: true },
     { text: 'Sobrenome', value: 'sobrenome', use: true },
     { text: 'Documento', value: 'documento', use: true },
+    { text: 'Email', value: 'contato.email', use: true },
+    { text: 'Numero', value: 'contato.celular', use: true },
   ];
   $vuetify: any;
 
