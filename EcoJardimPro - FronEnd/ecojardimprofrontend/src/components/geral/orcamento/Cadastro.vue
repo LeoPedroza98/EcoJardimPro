@@ -44,10 +44,6 @@
                                                     <v-text-field color="#4CAF50" v-model="item.descricao" label="Descrição"
                                                         :rules="fieldRules" :counter="60" dense outlined />
                                                 </v-col>
-                                                <v-col cols="12" sm="12" md="6" lg="6">
-                                                    <v-text-field color="#4CAF50" v-model="item.dataCriacao" label="Data de Criação"
-                                                        :rules="fieldRules" :counter="60" dense outlined />
-                                                </v-col>
                                             </v-row>
                                         </v-card-text>
                                     </v-card>

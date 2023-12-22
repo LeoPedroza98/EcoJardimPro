@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using EcoJardimProject.Domain.Base;
 
 namespace EcoJardimProject.Domain.Entities;
@@ -12,6 +13,6 @@ public class Servico: IEntity
     public Status? Status { get; set; }
     public long OrcamentoId { get; set; }
     public Orcamento? Orcamento { get; set; }
-    public DateTime? DataInicio { get; set; }
-    public DateTime? DataFinalizacao { get; set; }
+    public string? DataInicio { get; set; }
+    public string? DataFinalizacao { get; set; }
 }

@@ -194,7 +194,6 @@ export default class CadastroProjeto extends PageBase {
 
 
     Salvar() {
-        console.log("Projeto",this.item)
         if (this.$refs.form.validate()) {
             let patchModel = jiff.diff(this.itemOriginal, this.item, false);
 

@@ -22,7 +22,6 @@ interface String {
     toDateYYYYMMDD() : string;
     toDateDDMMYYYY() : string;
     toDateTimeDDMMYYYY() : string;
-    toTime() : string;
 }
 
 Date.prototype.toYYYYMMDD = function() {
@@ -80,13 +79,4 @@ String.prototype.toDateTimeDDMMYYYY = function() {
     }
 
     return helper.DiaMesAnoHora(new Date(helper.TrataDateTime(this)));
-}
-
-String.prototype.toTime = function() {
-
-    if (!this) {
-        return '';
-    }
-
-    return helper.Hora(new Date(helper.TrataDateTime(this)));
 }

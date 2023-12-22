@@ -6,7 +6,7 @@ import { Servico } from "./Servico";
 export class Orcamento implements Shared.IEntity {
     id: number = 0;
     nome: string = ""
-    dataCriacao: string = ""
+    dataCriacao!: string;
     descricao: string = ""
     projetoId: number = 0
     projeto!: Projeto;
@@ -17,7 +17,6 @@ export class Orcamento implements Shared.IEntity {
             return;
         this.id = model.id;
         this.nome = model.nome
-        this.dataCriacao = model.dataCriacao? model.dataCriacao.toDateYYYYMMDD() : ''
         this.descricao = model.descricao
         this.projetoId = model.projetoId
         this.projeto = model.projeto

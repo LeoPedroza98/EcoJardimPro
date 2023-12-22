@@ -25,7 +25,7 @@ export class Servico implements Shared.IEntity {
         this.status = model.status
         this.orcamentoId = model.orcamentoId
         this.orcamento = model.orcamento
-        this.dataInicio = model.dataInicio ? model.dataInicio.toDateYYYYMMDD() : ''
-        this.dataFinalizacao = model.dataFinalizacao ? model.dataFinalizacao.toDateYYYYMMDD() : ''
+        this.dataInicio = model.dataInicio
+        this.dataFinalizacao = model.dataFinalizacao
     }
 }

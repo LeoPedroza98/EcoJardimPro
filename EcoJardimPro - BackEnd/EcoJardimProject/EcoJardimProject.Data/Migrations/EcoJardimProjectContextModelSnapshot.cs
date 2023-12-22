@@ -95,11 +95,12 @@ namespace EcoJardimProject.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("PrazoFinal")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("PrazoFinal")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("PrazoInicial")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("PrazoInicial")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("StatusId")
                         .HasColumnType("bigint");
@@ -151,11 +152,11 @@ namespace EcoJardimProject.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime?>("DataFinalizacao")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DataFinalizacao")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DataInicio")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DataInicio")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Descricao")
                         .IsRequired()

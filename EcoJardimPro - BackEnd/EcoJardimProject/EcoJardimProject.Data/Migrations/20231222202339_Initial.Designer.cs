@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EcoJardimProject.Data.Migrations
 {
     [DbContext(typeof(EcoJardimProjectContext))]
-    [Migration("20231215211546_Initial")]
+    [Migration("20231222202339_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -65,6 +65,10 @@ namespace EcoJardimProject.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<long>("ProjetoId")
                         .HasColumnType("bigint");
 
@@ -94,11 +98,12 @@ namespace EcoJardimProject.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("PrazoFinal")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("PrazoFinal")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("PrazoInicial")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("PrazoInicial")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("StatusId")
                         .HasColumnType("bigint");
@@ -150,13 +155,13 @@ namespace EcoJardimProject.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime?>("DataFinalizacao")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DataFinalizacao")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DataInicio")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DataInicio")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Descrição")
+                    b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

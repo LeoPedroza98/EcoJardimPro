@@ -208,8 +208,8 @@ namespace EcoJardimProject.Data.Migrations
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StatusId = table.Column<long>(type: "bigint", nullable: true),
-                    PrazoInicial = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PrazoFinal = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PrazoInicial = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PrazoFinal = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ClienteId = table.Column<long>(type: "bigint", nullable: false)
                 },
@@ -235,6 +235,7 @@ namespace EcoJardimProject.Data.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProjetoId = table.Column<long>(type: "bigint", nullable: false)
@@ -257,12 +258,12 @@ namespace EcoJardimProject.Data.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Descrição = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     StatusId = table.Column<long>(type: "bigint", nullable: false),
                     OrcamentoId = table.Column<long>(type: "bigint", nullable: false),
-                    DataInicio = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DataFinalizacao = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    DataInicio = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DataFinalizacao = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
