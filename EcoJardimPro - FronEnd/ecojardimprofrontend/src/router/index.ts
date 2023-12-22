@@ -12,7 +12,7 @@ const routes = [
     redirect: "/home"
   },
   { path: '/', redirect: '/login' },
-  { path: '/', redirect: '/cadastro' },
+  { path: '/', redirect: '/registro' },
   {
     path: '/login', name: 'Login', component: () => import('../views/Login.vue')
   },
@@ -53,9 +53,9 @@ let isRedirected = false;
 router.beforeEach((to: Route, from: Route, next: NavigationGuardNext) => {
   const token: string | null = getToken();
 
-  if ((to.name !== 'login') && !token && !isRedirected) {
+  if ((to.name !== 'Login' && to.name !== 'Registro') && !token && !isRedirected) {
       isRedirected = true;
-      next('/login');
+      next('/login' && '/registro');
   } else if (to.meta && to.meta.permissions) {
       const userPermissions: string[] = getUserPermissions(token);
       const requiredPermissions: string[] = to.meta.permissions as string[];
