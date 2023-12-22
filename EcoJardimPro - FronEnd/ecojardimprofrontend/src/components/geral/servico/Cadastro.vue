@@ -198,7 +198,7 @@ export default class CadastroServico extends PageBase {
 
             (this.item.id > 0 ? this.service.Salvar(patchModel, this.item.id) : this.service.Salvar(this.item)).then(
                 res => {
-                    AlertaSimplesResponse("Aviso", res);
+                    this.$swal("Aviso", "Operação realizada com sucesso!", res.status == 201 || res.status == 200 ? "success" : "warning");
                     this.$emit("salvou");
                     this.Close();
                 },
