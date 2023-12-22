@@ -10,8 +10,7 @@
                         <v-toolbar-title color="black">{{ item.id > 0 ? "Editar" : "Criar" }} Projeto </v-toolbar-title>
                         <v-spacer />
                         <v-toolbar-items>
-                            <v-btn color="#4CAF50" background-color="#4CAF50" text @click="Salvar()">
-                                Salvar
+                            <v-btn class="btn btn-primary" @click="Salvar()"> <v-icon>mdi-plus</v-icon> Salvar
                             </v-btn>
                         </v-toolbar-items>
                     </div>

@@ -10,14 +10,14 @@
                         <v-toolbar-title color="black">{{ item.id > 0 ? "Editar" : "Criar" }} Cliente </v-toolbar-title>
                         <v-spacer />
                         <v-toolbar-items>
-                            <v-btn color="#4CAF50" background-color="#4CAF50" text @click="Salvar()">
-                                Salvar
+                            <v-btn class="btn btn-primary" @click="Salvar()"> <v-icon>mdi-plus</v-icon> Salvar
                             </v-btn>
                         </v-toolbar-items>
                     </div>
                     <template v-slot:extension>
                         <v-tabs v-model="tabActive" color="black">
                             <v-tab>Cliente</v-tab>
+                            
                         </v-tabs>
                     </template>
                 </v-toolbar>
@@ -29,6 +29,7 @@
                             <v-row dense>
                                 <v-col cols="12" sm="12" md="12">
                                     <v-card flat>
+                                        <v-spacer></v-spacer>
                                         <v-card-title>Cliente</v-card-title>
                                         <v-card-text class="mt-2">
                                             <v-row dense>
