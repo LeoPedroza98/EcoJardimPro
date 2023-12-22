@@ -39,7 +39,7 @@
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
                                                     <v-text-field color="#4CAF50" v-model="item.nome" label="Nome" :rules="fieldRules"
-                                                        :counter="30" dense outlined />
+                                                        :counter="40" dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
                                                     <v-select color="#4CAF50" v-model="item.statusId" label="Status" :rules="fieldRules"
@@ -47,18 +47,18 @@
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
                                                     <v-text-field color="#4CAF50" v-model="item.descricao" label="Descrição"
-                                                        :rules="fieldRules" :counter="60" dense outlined />
+                                                        :rules="fieldRules" :counter="80" dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
                                                     <v-text-field color="#4CAF50" v-model="item.dataInicio" label="Data de Inicio"
-                                                        :rules="fieldRules" :counter="60" dense outlined />
+                                                     dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
                                                     <v-text-field color="#4CAF50" v-model="item.dataFinalizacao" label="Data de Finalização"
-                                                        :rules="fieldRules" dense outlined />
+                                                     dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
-                                                    <v-text-field color="#4CAF50" v-model="item.valor" label="Valor do Serviço"
+                                                    <v-text-field type="number" color="#4CAF50" v-model="item.valor" label="Valor do Serviço"
                                                         :rules="fieldRules" dense outlined />
                                                 </v-col>
                                             </v-row>

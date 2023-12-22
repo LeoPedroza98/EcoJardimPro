@@ -42,7 +42,7 @@
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
                                                     <v-text-field color="#4CAF50" v-model="item.descricao" label="Descrição"
-                                                        :rules="fieldRules" :counter="60" dense outlined />
+                                                        :rules="fieldRules" :counter="80" dense outlined />
                                                 </v-col>
                                                 <v-col cols="12" sm="12" md="4" lg="4">
                                                     <v-text-field color="#4CAF50" v-model="item.prazoInicial" label="Data Inicial"

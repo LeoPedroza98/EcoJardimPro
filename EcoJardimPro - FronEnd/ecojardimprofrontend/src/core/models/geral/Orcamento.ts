@@ -17,7 +17,7 @@ export class Orcamento implements Shared.IEntity {
             return;
         this.id = model.id;
         this.nome = model.nome
-        this.dataCriacao = model.dataCriacao
+        this.dataCriacao = model.dataCriacao? model.dataCriacao.toDateYYYYMMDD() : ''
         this.descricao = model.descricao
         this.projetoId = model.projetoId
         this.projeto = model.projeto
