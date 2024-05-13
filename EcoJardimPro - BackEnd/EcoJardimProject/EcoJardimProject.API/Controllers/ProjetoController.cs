@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace EcoJardimProject.API.Controllers;
 
 [Route("[controller]")]
-[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [ApiController]
 public class ProjetoController : MasterCrudController<Projeto>
 {

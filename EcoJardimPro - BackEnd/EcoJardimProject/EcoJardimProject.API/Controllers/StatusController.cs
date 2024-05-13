@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace EcoJardimProject.API.Controllers;
 
 [Route("[controller]")]
-[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [ApiController]
 public class StatusController : MasterQueryController<Status>
 {
