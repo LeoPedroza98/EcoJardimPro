@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace EcoJardimProject.Data.ControllerBase;
 
-[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
 public class MasterQueryController<TEntity> : MasterBaseController where TEntity : class, IEntity
 {
     protected readonly ILogger<MasterQueryController<TEntity>> _logger;
