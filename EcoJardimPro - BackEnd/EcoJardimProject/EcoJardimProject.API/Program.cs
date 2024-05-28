@@ -49,28 +49,6 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     }
     );
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
-    {
-        Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer",
-        BearerFormat = "JWT",
-        In = ParameterLocation.Header,
-        Description = "Header de autoriza��o JWT usando o esquema Bearer. Digite 'Bearer' seguido do JWT para autorizar.",
-    });
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },new String[]{}
-        }
-    });
 });
 
 builder.Services.AddControllers(mvc => mvc.EnableEndpointRouting = false)
@@ -89,6 +67,7 @@ builder.Services.AddCors(o => o.AddPolicy("CorsLibera", builder =>
 }));
 
 builder.Services.AddInjections();
+builder.Services.AddHttpContextAccessor();
 
 
 builder.Configuration.AddEnvironmentVariables(prefix: "ConnectionStrings:DefaultConnection");
